@@ -37,7 +37,7 @@ export default class List extends Component {
 
     render() {
         return (
-            <ul>
+            <ul className="ul-for-group">
                 { this.createGroups(this.props.items) }
             </ul>
         )

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-
  
 export default class Item extends Component  {
     constructor(props) {
@@ -41,13 +40,25 @@ export default class Item extends Component  {
     render() {
         const completedAt = this.state.completedAt
 
-        if ( typeof completedAt === 'undefined' || completedAt === null ) {
+        if (!this.itemFinished()) {
             return (
-                <li className={ this.props.shouldHide ? 'hidden' : ''} onClick={this.handleClick}>{this.props.task}</li>
+                <span className={ this.props.shouldHide ? 'hidden' : 'item-locked'} >
+                <li onClick={this.handleClick}>{this.props.task}</li>
+                </span>
+            )
+        }
+        else if ( typeof completedAt === 'undefined' || completedAt === null ) {
+            return (
+                <span className={ this.props.shouldHide ? 'hidden' : ' item-incomplete'} >
+                <li onClick={this.handleClick}>{this.props.task}</li>
+                </span>
             )
         } else {
             return (
-                <strike><li className={ this.props.shouldHide ? 'hidden' : ''} onClick={this.handleClick}>{this.props.task}</li></strike>
+                    <span className={ this.props.shouldHide ? 'hidden' : 'item item-completed'}>
+                    <li onClick={this.handleClick}>{this.props.task}
+                    </li>
+                    </span>
             )
         }
     }

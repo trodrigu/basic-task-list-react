@@ -2,6 +2,40 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  padding-left: 10em;
+  padding-top: 5em;
 }
 
 .hidden { display:none; }
+
+.ul-for-item { 
+  list-style: none; 
+  margin-left: 0;
+  padding-left: 3em;
+  text-indent: 1.25em;
+  margin-bottom: 2em;
+}
+
+.item-locked {
+  list-style-image: url("./Locked.svg");
+}
+
+.item-incomplete {
+  list-style-image: url("./Incomplete.svg");
+}
+
+.item-completed {
+  list-style-image: url("./Completed.svg");
+}
+
+.ul-for-group { 
+  list-style: none; 
+  margin-left: 0;
+  padding-left: 1em;
+  text-indent: 1.25em;
+  margin-bottom: 2em;
+}
+
+.group {
+  list-style-image: url("./Group.svg");
+}
